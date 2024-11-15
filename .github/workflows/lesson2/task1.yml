@@ -1,0 +1,24 @@
+# Create a workflow that runs a matrix build for a Node.js application across different Node.js versions.
+
+name: Lesson 2/Task 1
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14, 16, 18]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{matrix.node-version}}
+      
+      - name: Install Dependencies
+        run: npm install

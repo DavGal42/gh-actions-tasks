@@ -1,0 +1,24 @@
+# Given a sample YAML file, identify the different components (workflow name, events, jobs, steps).
+
+name: Lesson 1/Task 1 # Workflow name
+
+on: workflow_dispatch # Event
+
+jobs:
+  build: # Job 1
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code # Step 1
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js # Step 2
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies # Step 3
+        run: npm install
+
+      - name: Run tests # Step 4
+        run: npm test

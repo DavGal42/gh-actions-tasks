@@ -1,0 +1,17 @@
+# Set up a conditional trigger to run a deployment job only on the main branch.
+
+name: Lesson 2/ Task 3
+
+on: workflow_dispatch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: git.ref = "refs/heads/main"
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: Deploy Code
+        runs: "Deploying..."

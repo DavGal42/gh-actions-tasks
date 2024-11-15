@@ -1,0 +1,13 @@
+# Create a basic workflow that triggers on every push to the main branch and runs a shell command like echo "Hello, World!".
+
+# name: Lesson 1/Task 2
+# 
+# on:
+#   push:
+#     branches: main
+#   
+# jobs:
+#   runs-on: ubuntu-latest
+# 
+#   steps:
+#     run: "Hello, World!"
