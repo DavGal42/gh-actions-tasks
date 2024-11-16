@@ -1,0 +1,22 @@
+# Customize one of the actions by providing specific inputs and handling its outputs.
+
+name: 'Lesson 4/Task 2'
+description: 'Custom Action with some inputs and output'
+
+inputs:
+  name:
+    description: 'The name of the user'
+    required: true
+    default: 'User'
+  age:
+    description: 'The age of the user'
+    required: false
+    default: 20
+  
+outputs:
+  output-message:
+    description: 'The output message'
+  
+runs:
+  using: 'node18'
+  main: 'index.js'

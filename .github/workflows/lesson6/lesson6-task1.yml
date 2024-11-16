@@ -1,0 +1,45 @@
+# Create a workflow that automates a scheduled task, uses parallel jobs,
+# and implements caching to optimize performance.
+
+name: Lesson 6/Task 1
+
+on:
+  workflow_dispatch:
+#  schedule:
+#    - cron: '0 0 * * *'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Cache Dependencies
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{runner.os}}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{runner-os}}-node-modules-
+      - name: Install Dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test
+
+  lint:
+    test:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checkout Code
+          uses: actions/checkout@v4
+        - name: Cache Dependencies
+          uses: actions/cache@v4
+          with:
+            path: node_modules
+            key: ${{runner.os}}-node-modules-${{ hashFiles('**/package-lock.json') }}
+            restore-keys: ${{runner-os}}-node-modules-
+        - name: Install Dependencies
+          run: npm install
+        - name: Run linting
+          run: npm run lint

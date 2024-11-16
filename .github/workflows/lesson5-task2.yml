@@ -1,0 +1,12 @@
+# Test the action in a GitHub repository and publish it to the GitHub Marketplace.
+
+name: Lesson 5/Task 2
+
+on: workflow_dispatch
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Action
+        uses: davgal42/gh-actions-tasks@main#lesson5-task1.yml

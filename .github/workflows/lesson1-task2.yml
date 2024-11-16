@@ -11,4 +11,4 @@ jobs:
   runs-on: ubuntu-latest
 
   steps:
-    - run: "Hello, World
+    - run: "Hello, World"

@@ -1,0 +1,10 @@
+# Create a custom GitHub Action that performs a specific task (e.g., greeting a user or running a shell command).
+
+name: 'Lesson 5/Task 1'
+description: 'Custom action printin hello world'
+
+runs:
+  using: 'composite'
+  steps:
+    - run: echo "Hello, World!"
+      shell: bash

@@ -1,0 +1,32 @@
+# Design a workflow that includes parallel job execution, dependency caching, and proper version pinning.
+# Ensure the workflow follows best practices for performance and maintenance.
+
+name: Lesson 8/Task 1
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14, 16, 18]
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: Cache Dependencies
+        uses: actions/cache@v4
+        path: node_modules
+        key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: ${{ runner.os }}-node-modules-
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run lint
+        run: npm run lint
+      
+      - name: Run tests
+        run: npm test
