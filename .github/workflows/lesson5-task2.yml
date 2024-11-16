@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test Action
-        uses: davgal42/gh-actions-tasks/.github/workflows/lesson5-task1.yml@main
+        uses: davgal42/gh-actions-tasks/lesson5-task1.yml@main
