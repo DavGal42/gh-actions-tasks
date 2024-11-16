@@ -1,0 +1,26 @@
+# Create a workflow that uses at least three different pre-built actions from the GitHub Marketplace.
+
+name: Lesson 4/Task 1
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: Cache Dependencies
+        uses: actions/cache@v4
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build

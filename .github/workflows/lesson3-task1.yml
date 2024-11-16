@@ -1,0 +1,21 @@
+# Create a simple workflow that includes a job with three steps: checking out the code,
+# setting up the environment, and running a build command.
+
+name: Lesson 3/Task 1
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      
+      - name: Build
+        run: npm run build
