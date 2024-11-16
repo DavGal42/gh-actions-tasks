@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Deploy Code
-        runs: "Deploying..."
+        run: "Deploying..."
