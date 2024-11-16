@@ -8,7 +8,8 @@ on:
   workflow_dispatch:
   
 jobs:
-  runs-on: ubuntu-latest
+  print:
+    runs-on: ubuntu-latest
 
-  steps:
-    - run: "Hello, World"
+    steps:
+      - run: "Hello, World"
