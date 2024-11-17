@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: call workflow
-        uses: ./.github/workflows/reusable-workflow.yml
+        uses: ./reusable-workflow.yml

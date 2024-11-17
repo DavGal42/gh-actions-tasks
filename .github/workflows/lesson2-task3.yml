@@ -2,7 +2,9 @@
 
 name: Lesson 2/ Task 3
 
-on: workflow_dispatch
+on:
+  push:
+    branches: main
 
 jobs:
   deploy:
