@@ -4,7 +4,7 @@ name: Lesson 2/ Task 3
 
 on:
   push:
-    branches: main
+    branches: [main, develop]
 
 jobs:
   deploy:
@@ -16,4 +16,4 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Deploy Code
-        run: "Deploying..."
+        run: echo "Deploying..."
