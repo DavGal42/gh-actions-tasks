@@ -1,0 +1,34 @@
+# Implement environment protection in a deployment workflow, requiring manual approval before deployment to production.
+
+name: Lesson 7/Task 2
+
+on:
+  workflow_dispatch:
+#  push:
+#    branches:
+#      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Set up deployment
+        run: echo "Setting up deployment"
+
+      - name: Deploy to staging
+        run: echo "Deploying to staging"
+        
+      - name: Deploy to production
+        if: github.ref == 'refs/heads/main'
+        run: echo "Deploying to production"
+        environment:
+          name: production
+          url: https://production-url.com
+
+        approvals:
+          reviewers:
+            - davgal42

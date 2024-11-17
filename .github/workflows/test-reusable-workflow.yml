@@ -1,0 +1,10 @@
+name: Test Reusable Workflow
+
+on: workflow_dispatch
+
+jobs:
+  call_workflow: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: call workflow
+        uses: ./.github/workflows/reusable-workflow.yml

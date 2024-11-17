@@ -1,0 +1,27 @@
+# Troubleshoot a failing workflow by enabling debug logging, reviewing logs,
+# and implementing the necessary fixes to resolve the issue.
+
+name: Lesson 8/Task 2
+
+on: workflow_dispatch
+
+jobs:
+  troubleshoot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Enable debug logging
+        env:
+          ACTIONS_RUNNER_DEBUG: true 
+          ACTIONS_STEP_DEBUG: true
+    
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        wtih:
+          node-version: 16
+      
+      - name: Install Dependencies
+        run: npm install

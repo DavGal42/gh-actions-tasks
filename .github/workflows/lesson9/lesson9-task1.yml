@@ -1,2 +1,0 @@
-# Create a GitHub Actions workflow that triggers a build in Jenkins and deploys
-# the build artifact to an AWS environment using AWS CodePipeline.
