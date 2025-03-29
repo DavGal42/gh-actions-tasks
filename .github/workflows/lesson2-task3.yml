@@ -3,8 +3,8 @@
 name: Lesson 2/ Task 3
 
 on:
-  push:
-    branches: [main, develop]
+#  push:
+#    branches: [main, develop]
 
 jobs:
   deploy:
